@@ -58,6 +58,7 @@ pipeline {
                 // Apply the Terraform plan
 		sh '''
 		   cd terraform
+		   cd ec2_for_project1
                    terraform apply "tfplan" -no-color
 		'''
             }
@@ -80,6 +81,7 @@ pipeline {
                 // Apply the Terraform plan
 		sh '''
 		   cd terraform
+		   cd ec2_for_project1
                    terraform destroy -auto-approve -no-color
 		'''
             }
