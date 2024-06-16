@@ -18,7 +18,7 @@ pipeline {
                 // Initialize Terraform
 		        sh '''
 		          pwd
-      		    cd terraform/ec2_for_project1
+      		    cd terraform\ec2_for_project1
 		          terraform init -no-color
 		        '''
             }
