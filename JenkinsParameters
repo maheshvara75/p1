@@ -18,7 +18,7 @@ pipeline {
                 // Initialize Terraform
 		        sh '''
 		          pwd
-      		    cd terraform
+      		    cd terraform/ec2_for_project1
 		          terraform init -no-color
 		        '''
             }
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 // Run Terraform plan and save the output to a file
 		sh '''
-		   cd terraform
+		   cd terraform/ec2_for_project1
 		   terraform plan -out=tfplan -no-color
      		'''
   		
@@ -55,7 +55,7 @@ pipeline {
             steps {
                 // Apply the Terraform plan
 		sh '''
-		   cd terraform
+		   cd terraform\ec2_for_project1
                    terraform apply "tfplan" -no-color
 		'''
             }
@@ -77,7 +77,7 @@ pipeline {
             steps {
                 // Apply the Terraform plan
 		sh '''
-		   cd terraform
+		   cd terraform\ec2_for_project1
                    terraform destroy -auto-approve -no-color
 		'''
             }
