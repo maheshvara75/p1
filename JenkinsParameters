@@ -19,6 +19,7 @@ pipeline {
 		        sh '''
 		          pwd
       		    cd terraform
+		    cd ec2_for_project1
 		          terraform init -no-color
 		        '''
             }
